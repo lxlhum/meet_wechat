@@ -1,0 +1,29 @@
+{
+  "name": "meet_wetchat_ser",
+  "version": "1.0.0",
+  "description": "meet academy wechat server",
+  "main": "app.js",
+  "dependencies": {
+    "marked": "^0.3.6",
+    "connect-multiparty": "^2.0.0",
+    "properties-parser": "^0.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ryan",
+  "license": "MIT",
+  "keywords": [
+    "meet",
+    "wechat"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxlhum/meet_wechat.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lxlhum/meet_wechat/issues"
+  },
+  "homepage": "https://github.com/lxlhum/meet_wechat#readme"
+}
