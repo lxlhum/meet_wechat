@@ -1,8 +1,5 @@
-var md = require('./routes/markdown');
-var upload = require('./routes/upload');
+var index = require('./routes/index.js');
 
-module.exports = function(koa){
-    koa.use('/', md.routes(), md.allowedMethods());
-    koa.use('/upload', upload.routes(), upload.allowedMethods());
+module.exports = function (router) {
+    router.get('/', index);
 };
-

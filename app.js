@@ -1,16 +1,23 @@
-var app = require('koa')()
-var koa = require('koa-router')()
-var logger = require('koa-logger')
-var json = require('koa-json')
-var views = require('koa-views')
+const Koa = require('koa');
+const Router = require('koa-router');
+
+const app = new Koa();
+const router = new Router();
+
+const views = require('koa-views');
+const json = require('koa-json');
+const logger = require('koa-logger');
+const bodyParser = require('koa-bodyparser');
 
 app.use(views('views', {
   root: __dirname + '/views',
-  default: 'ejs'
+  extension: 'ejs'
 }));
-app.use(require('koa-bodyparser')());
 app.use(json());
 app.use(logger());
+app.use(bodyParser());
+
+var index = require('./routes/index');
 
 app.use(function *(next){
   var start = new Date;
@@ -21,9 +28,10 @@ app.use(function *(next){
 
 app.use(require('koa-static')(__dirname + '/public'));
 
-app.use(koa.routes());
+require('./routers')(router);
 
-require('./routers')(koa);
+app.use(router.routes())
+   .use(router.allowedMethods());
 
 app.on('error', function(err, ctx){
   logger.error('server error', err, ctx);
