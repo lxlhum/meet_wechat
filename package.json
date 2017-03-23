@@ -14,7 +14,8 @@
     "koa-static": "^3.0.0",
     "koa-views": "^6.0.1",
     "marked": "^0.3.6",
-    "properties-parser": "^0.3.1"
+    "properties-parser": "^0.3.1",
+    "wechat-api": "^1.32.0"
   },
   "devDependencies": {},
   "scripts": {

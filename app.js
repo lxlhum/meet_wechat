@@ -9,15 +9,10 @@ const json = require('koa-json');
 const logger = require('koa-logger');
 const bodyParser = require('koa-bodyparser');
 
-app.use(views('views', {
-  root: __dirname + '/views',
-  extension: 'ejs'
-}));
+app.use(views(__dirname + '/views', {extension: 'ejs'}));
 app.use(json());
 app.use(logger());
 app.use(bodyParser());
-
-var index = require('./routes/index');
 
 app.use(require('koa-static')(__dirname + '/public'));
 
